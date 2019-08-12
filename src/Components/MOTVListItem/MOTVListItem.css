@@ -1,0 +1,18 @@
+.MOTV-list-item {
+    /* width: 10%; */
+    justify-self: center;
+    padding: 5px;
+}
+.MOTV-list-item:hover {
+    transform: scale(1.05);
+    transition: all 0.25s;
+    cursor: pointer;
+    background: #f0f07b;
+    border-radius: 10px;
+}
+.MOTV-list-item-img {
+    border-radius: 10px;
+}
+.MOTV-list-item-title {
+    text-align: center;
+}

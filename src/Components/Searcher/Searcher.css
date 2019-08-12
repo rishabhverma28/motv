@@ -1,0 +1,72 @@
+.searcher {
+    z-index: 4;
+    min-height: calc(100vh - 50px);
+    position: relative;
+    display: grid;
+    grid-template-columns: 3fr 40% 10fr;
+    grid-template-rows: 150px min-content auto;
+    grid-template-areas:
+        ". . ."
+        ". container ."
+        "motvlist motvlist motvlist";
+}
+
+.searcher-container {
+    grid-area: container;
+    background: #fff;
+    box-shadow: 0px 0px 5px 0px rgba(98, 150, 155, 0.75);
+    border-radius: 2px;
+    padding: 15px;
+    font-size: 3rem;
+    position: relative;
+}
+.searcher-container-label {
+    display: block;
+}
+.searcher-container-input {
+    width: 70%;
+    padding: 11px;
+    font-size: 1.5rem;
+    display: inline-block;
+    border: 1px solid black;
+}
+button {
+    font-size: 1.5rem;
+    padding: 11px;
+    appearance: none;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.selector-buttons {
+    position: absolute;
+    top: -62px;
+    left: 0;
+}
+.searcher-container-button {
+    display: inline-block;
+    width: 24%;
+    border: 1px solid black;
+    /* cursor: pointer; */
+    /* font-size: 1.5rem;
+    padding: 11px;
+    appearance: none;
+    background: #fff; */
+}
+.selector-buttons-movie {
+    /* border: 1px solid black; */
+    border-right: 1px solid black;
+    background: #d7d6d6;
+    /* cursor: pointer; */
+}
+.selector-buttons-tv {
+    /* border: 1px solid black; */
+    border-bottom: none;
+    border-left: none;
+    background: #d7d6d6;
+    /* cursor: pointer; */
+}
+.active {
+    background: white;
+}

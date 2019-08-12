@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -30,4 +30,19 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.App {
+    /* display: grid; */
+    /* z-index: 2; */
+    position: relative;
+    background: #e0e1e6;
 }
+.site-image {
+    /* position: absolute; */
+    /* top: 0; */
+}
+/* .homepage {
+    z-index: 4;
+    position: relative;
+} */

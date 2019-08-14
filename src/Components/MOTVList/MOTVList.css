@@ -14,3 +14,7 @@
     box-shadow: 0px 0px 15px 5px rgba(184, 181, 181, 0.75);
     /* height: 100%; */
 }
+
+.MOTV-list a {
+    text-decoration: none;
+}

@@ -1,17 +1,20 @@
 .MOTV-list-item {
-    /* width: 10%; */
     justify-self: center;
-    padding: 5px;
+    padding: 3px;
+    border: 2px solid transparent;
+    color: black;
 }
 .MOTV-list-item:hover {
     transform: scale(1.05);
     transition: all 0.25s;
     cursor: pointer;
-    background: #f0f07b;
+    border: 2px solid black;
     border-radius: 10px;
 }
 .MOTV-list-item-img {
     border-radius: 10px;
+    display: inline-block;
+    width: 100%;
 }
 .MOTV-list-item-title {
     text-align: center;

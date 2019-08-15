@@ -1,16 +1,33 @@
 .MOTV-list {
-    /* width: 100%; */
-    /* position: relative; */
-
     display: grid;
     grid-area: motvlist;
-    grid-template-columns: repeat(8, 1fr);
+    /* grid-template-columns: auto; */
     column-gap: 10px;
     row-gap: 10px;
     padding: 15px;
-    margin: 10px;
+    /* margin: 10px; */
     background: white;
     border-radius: 3px;
     box-shadow: 0px 0px 15px 5px rgba(184, 181, 181, 0.75);
+    margin: 10px 35px;
     /* height: 100%; */
 }
+
+.MOTV-list a {
+    text-decoration: none;
+}
+.MOTV-list-error {
+    grid-area: motvlist;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0px 0px 15px 5px rgba(184, 181, 181, 0.75);
+    margin: 30px 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* @media (min-width: 1024px) {
+    .MOTV-list {
+        grid-template-columns: repeat(8, 1fr);
+    }
+} */

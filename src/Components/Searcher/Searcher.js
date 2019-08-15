@@ -12,7 +12,8 @@ class Searcher extends Component {
             searchText: "",
             isLoading: false,
             movie: true,
-            searched: false
+            searched: false,
+            errorInFetching: false
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleEnter = this.handleEnter.bind(this);
@@ -60,14 +61,23 @@ class Searcher extends Component {
         console.log(URL_FORMED);
 
         fetch(URL_FORMED)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response.json();
+            })
             .then(data =>
                 this.setState({
                     isLoading: true,
                     queryResponse: data,
                     searched: true
                 })
-            );
+            )
+            .catch(err => {
+                console.log(err);
+                this.setState({ searched: true, errorInFetching: true });
+            });
         // console.log(t);
     }
     render() {
@@ -122,7 +132,12 @@ class Searcher extends Component {
                         Search
                     </button>
                 </div>
-                {this.state.searched && (
+                {this.state.searched && this.state.errorInFetching && (
+                    <div className="MOTV-list-error">
+                        Sorry, there was an error in fetching your request
+                    </div>
+                )}
+                {this.state.searched && !this.state.errorInFetching && (
                     <MOTVList data={this.state.queryResponse} />
                 )}
             </div>

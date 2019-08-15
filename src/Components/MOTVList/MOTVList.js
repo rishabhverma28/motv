@@ -4,8 +4,31 @@ import MOTVListItem from "../MOTVListItem/MOTVListItem";
 import { Link } from "react-router-dom";
 
 class MOTVList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            windowWidth: window.innerWidth
+        };
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    }
+
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener("resize", this.updateWindowDimensions);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.updateWindowDimensions);
+    }
+    updateWindowDimensions() {
+        this.setState({
+            windowWidth: window.innerWidth
+        });
+    }
     render() {
         const POSTER_PATH_PREFIX = "https://image.tmdb.org/t/p/w154/";
+        const numColumns = Math.floor(this.state.windowWidth / 154) - 1;
+        console.log(numColumns);
         let items = this.props.data.results.map(val => {
             // debugger;
             const title = val.original_title || val.name;
@@ -27,7 +50,14 @@ class MOTVList extends Component {
                 </Link>
             );
         });
-        return <div className="MOTV-list">{items}</div>;
+        return (
+            <div
+                className="MOTV-list"
+                style={{ gridTemplateColumns: `repeat(${numColumns}, 1fr)` }}
+            >
+                {items}
+            </div>
+        );
     }
 }
 

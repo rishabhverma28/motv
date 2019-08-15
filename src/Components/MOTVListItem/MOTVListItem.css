@@ -13,6 +13,8 @@
 }
 .MOTV-list-item-img {
     border-radius: 10px;
+    display: inline-block;
+    width: 100%;
 }
 .MOTV-list-item-title {
     text-align: center;

@@ -56,9 +56,9 @@ class Searcher extends Component {
             .toLowerCase();
         let movieOrTV = this.state.movie ? "movie" : "tv";
         // debugger;
-        console.log(addedString);
+        // console.log(addedString);
         const URL_FORMED = API + movieOrTV + API_KEY + "&query=" + addedString;
-        console.log(URL_FORMED);
+        // console.log(URL_FORMED);
 
         fetch(URL_FORMED)
             .then(response => {

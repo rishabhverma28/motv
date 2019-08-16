@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Header.css";
 import Logo from "../../Images/motv.svg";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
     constructor(props) {
@@ -26,10 +27,12 @@ class Header extends Component {
         return (
             <header
                 className={
-                    this.state.hidden ? "site-header" : "site-header-color"
+                    this.state.hidden ? "site-header" : "site-header color"
                 }
             >
-                <img src={Logo} alt="logo" className="site-header-logo" />
+                <Link to="/">
+                    <img src={Logo} alt="logo" className="site-header-logo" />
+                </Link>
             </header>
         );
     }

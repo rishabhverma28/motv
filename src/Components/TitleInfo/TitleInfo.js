@@ -30,7 +30,6 @@ class TitleInfo extends Component {
     //     });
     // }
     getColors = colors => {
-        console.log(colors);
         this.setState({
             colors: colors
         });
@@ -38,10 +37,8 @@ class TitleInfo extends Component {
     componentDidMount() {
         this.getData();
         // this.getColors();
-        // console.log("jkjdksjkdjskdjs", this.state.data.data.length);
     }
     render() {
-        console.log(this.state);
         const POSTER_PATH_PREFIX = "https://image.tmdb.org/t/p/w342/";
         const BACKGROUND_IMAGE_PREFIX = "https://image.tmdb.org/t/p/original/";
         const info = this.state.data;

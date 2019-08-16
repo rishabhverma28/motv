@@ -12,11 +12,8 @@ function App() {
             <div className="App">
                 <Header />
                 <Switch>
-                    {/* <SiteImage /> */}
                     <Route exact path="/" component={Homepage} />
                     <Route exact path="/title/:id" component={TitleInfo} />
-                    {/* <img src={homepageSVG} alt="site intro" className="site-image" /> */}
-                    {/* <Searcher /> */}
                 </Switch>
             </div>
         </HashRouter>

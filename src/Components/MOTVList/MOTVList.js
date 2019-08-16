@@ -28,7 +28,6 @@ class MOTVList extends Component {
     render() {
         const POSTER_PATH_PREFIX = "https://image.tmdb.org/t/p/w154/";
         const numColumns = Math.floor(this.state.windowWidth / 154) - 1;
-        console.log(numColumns);
         let items = this.props.data.results.map(val => {
             // debugger;
             const title = val.original_title || val.name;

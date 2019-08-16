@@ -12,20 +12,12 @@
     z-index: 100;
     transition: background-color 0.5s ease;
 }
-.site-header-color {
-    height: 50px;
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    /* background-color: transparent; */
-    width: 100%;
-    color: #fff;
-    font-size: 2em;
-    position: fixed;
-    top: 0;
-    z-index: 100;
+.site-header.color {
     background-color: #2e4057;
     transition: background-color 0.3s ease;
+}
+.site-header a {
+    padding-top: 5px;
 }
 .site-header-logo {
     width: 40px;

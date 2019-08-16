@@ -30,6 +30,7 @@
     font-size: 1.5rem;
     display: inline-block;
     border: 1px solid black;
+    font-family: inherit;
 }
 button {
     font-size: 1.5rem;
@@ -39,6 +40,7 @@ button {
     border: none;
     cursor: pointer;
     outline: none;
+    font-family: inherit;
 }
 .selector-buttons {
     position: absolute;

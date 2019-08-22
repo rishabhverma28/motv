@@ -20,6 +20,7 @@
     padding: 35px;
     font-size: 1.8rem;
     position: relative;
+    border-top-left-radius: 0;
 }
 .searcher-container-label {
     display: block;
@@ -44,31 +45,24 @@ button {
 }
 .selector-buttons {
     position: absolute;
-    top: -50px;
+    top: -51px;
     left: 0;
 }
 .searcher-container-button {
     display: inline-block;
     width: 100%;
     border: 1px solid black;
-    /* cursor: pointer; */
-    /* font-size: 1.5rem;
-    padding: 11px;
-    appearance: none;
-    background: #fff; */
 }
 .selector-buttons-movie {
-    /* border: 1px solid black; */
     border-right: 1px solid black;
     background: #d7d6d6;
-    /* cursor: pointer; */
+    margin: 0;
 }
 .selector-buttons-tv {
-    /* border: 1px solid black; */
     border-bottom: none;
     border-left: none;
     background: #d7d6d6;
-    /* cursor: pointer; */
+    margin: 0;
 }
 .active {
     background: white;

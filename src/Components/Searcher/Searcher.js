@@ -23,7 +23,6 @@ class Searcher extends Component {
 
     handleKeyChange(evt) {
         if (evt.key === "Enter") {
-            alert("pressed");
             this.handleClick();
             // return;
         } else {
@@ -32,12 +31,13 @@ class Searcher extends Component {
             });
         }
     }
-    handleMovieorTV(evt) {
-        // alert();
-        // console.log(evt.target.dataset.id);
-        evt.target.dataset.id === "movie"
+    async handleMovieorTV(evt) {
+        (await evt.target.dataset.id) === "movie"
             ? this.setState({ movie: true })
             : this.setState({ movie: false });
+        if (this.state.searched) {
+            this.handleClick();
+        }
     }
     handleEnter(evt) {
         if (evt.keyCode === 13) {
@@ -45,21 +45,14 @@ class Searcher extends Component {
         } else {
             return;
         }
-        // return;
-        // } else {
-        // }
     }
     handleClick() {
-        // console.log(evt.target.value);
         const addedString = this.state.searchText
             .replace(/ /g, "+")
             .toLowerCase();
         let movieOrTV = this.state.movie ? "movie" : "tv";
-        // debugger;
-        // console.log(addedString);
         const URL_FORMED = API + movieOrTV + API_KEY + "&query=" + addedString;
-        // console.log(URL_FORMED);
-
+        console.log(URL_FORMED);
         fetch(URL_FORMED)
             .then(response => {
                 if (!response.ok) {
@@ -78,10 +71,8 @@ class Searcher extends Component {
                 console.log(err);
                 this.setState({ searched: true, errorInFetching: true });
             });
-        // console.log(t);
     }
     render() {
-        // this.state.movie?:
         const movieOrTV = this.state.movie ? "Movie" : "TV Show";
         return (
             <div className="searcher">
